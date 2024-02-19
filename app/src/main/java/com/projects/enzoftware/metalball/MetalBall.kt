@@ -20,6 +20,8 @@ import android.view.SurfaceView
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class MetalBall : AppCompatActivity() , SensorEventListener {
@@ -114,6 +116,9 @@ class MetalBall : AppCompatActivity() , SensorEventListener {
 
 
 class GroundView(context: Context?) : SurfaceView(context), SurfaceHolder.Callback{
+
+    // PARa referenciar a la BD
+    var myRef: DatabaseReference? = null
 
     // ball coordinates
     var cx : Float = 10.toFloat()
@@ -235,7 +240,37 @@ class GroundView(context: Context?) : SurfaceView(context), SurfaceHolder.Callba
         }
         else{ noBorderY = true }
 
+        // Actualiza las coordenadas en Firebase
+        val database = FirebaseDatabase.getInstance()
+        myRef = database.reference.child("DatosEsfera")
+        myRef!!.child("coordenadas").setValue(mapOf("x" to cx, "y" to cy))
+
         invalidate()
 
+    }
+
+    inner class DrawThread(private val surfaceHolder: SurfaceHolder, private val groundView: GroundView) : Thread() {
+        private var running: Boolean = false
+
+        fun setRunning(running: Boolean) {
+            this.running = running
+        }
+
+        override fun run() {
+            var canvas: Canvas?
+            while (running) {
+                canvas = null
+                try {
+                    canvas = surfaceHolder.lockCanvas(null)
+                    synchronized(surfaceHolder) {
+                        groundView.draw(canvas!!)
+                    }
+                } finally {
+                    if (canvas != null) {
+                        surfaceHolder.unlockCanvasAndPost(canvas)
+                    }
+                }
+            }
+        }
     }
 }

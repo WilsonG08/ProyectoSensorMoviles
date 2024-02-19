@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "54678925595",
+    "firebase_url": "https://proyectosensormoviles-default-rtdb.firebaseio.com",
+    "project_id": "proyectosensormoviles",
+    "storage_bucket": "proyectosensormoviles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54678925595:android:2e2ee1e9d58d1d9e8f23be",
+        "android_client_info": {
+          "package_name": "com.projects.enzoftware.metalball"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrpGsGtnzySEK37mjs6gOJ5keQuEBRO7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.projects.enzoftware.metalball.app-mergeDebugResources-16:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "com.projects.enzoftware.metalball.app-mergeDebugResources-20:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Wilso\\.gradle\\caches\\transforms-3\\aaa9a1bc17842a60d4691380a290809b\\transformed\\material-1.4.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "source": "C:\\Users\\Wilso\\.gradle\\caches\\transforms-3\\e47aa4cafc9f4f5760022e473872d945\\transformed\\material-1.4.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

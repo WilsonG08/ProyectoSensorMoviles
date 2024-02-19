@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'  // Agregado el plugin kotlin-parcelize
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.gms.google-services'// Agregado el plugin kotlin-parcelize
 
 android {
     compileSdkVersion 33
@@ -32,6 +33,7 @@ dependencies {
     // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31"  // Eliminada
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"  // Actualizada
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'com.google.firebase:firebase-database:20.3.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
